@@ -1,0 +1,56 @@
+Bir dizi üzerinde bir oyun oynayalım! Bir **game** adlı bir n elemanlı dizinin indeks \(0\)'ında duruyorsunuz. Herhangi bir indeks \(i\)'den (burada \(0 \leq i < n\)) aşağıdaki hareketlerden birini yapabilirsiniz:
+
+- **Geri Git:** Eğer hücre \(i - 1\) varsa ve 0 içeriyorsa, hücre \(i - 1\)'e geri dönebilirsiniz.
+- **İleri Git:**
+  - Eğer hücre \(i + 1\) 0 içeriyorsa, hücre \(i + 1\)'e ilerleyebilirsiniz.
+  - Eğer hücre \(i + leap\) 0 içeriyorsa, hücre \(i + leap\)'e sıçrayabilirsiniz.
+  - Eğer hücre \(n - 1\)'deyseniz veya \(i + leap \geq n\) ise, dizinin dışına yürüyebilir veya sıçrayarak oyunu kazanabilirsiniz.
+
+Başka bir deyişle, \(i\)'den \(i + 1\), \(i - 1\), veya \(i + leap\) indeksine gidebilirsiniz, uzun bir yolculuk yaparken hedef hücre 0 içerdiği sürece. Eğer hedef hücre \(n - 1\)'den büyükse, oyunu kazanırsınız.
+
+### Fonksiyon Açıklaması
+Aşağıdaki editörde **canWin** fonksiyonunu tamamlayın.
+
+**canWin** şu parametreleri alır:
+- **int leap:** sıçrama uzunluğu.
+- **int game[n]:** gezilecek dizi.
+
+**Döndürür:**
+- **boolean:** Eğer oyun kazanılabiliyorsa true, aksi takdirde false.
+
+### Girdi Formatı
+İlk satır, bir tamsayı **q** içerir, sorguların sayısını (yani fonksiyon çağrıları) belirtir.
+
+Ardından gelen 2 \* **q** satır, her sorguyu iki satır halinde açıklar:
+1. İlk satır, sırasıyla **n** ve **leap** değerlerini tanımlayan iki boşlukla ayrılmış tamsayı içerir.
+2. İkinci satır, dizinin değerlerini (0 ve 1'ler) tanımlayan **game[0], game[1], ..., game[n-1]** değerlerini içerir.
+
+### Kısıtlamalar
+- \(1 \leq q \leq 5000\)
+- \(2 \leq n \leq 100\)
+- \(0 \leq leap \leq 100\)
+- Dizinin ilk elemanının değeri her zaman 0'dır.
+
+### Örnek Girdi
+text
+input
+4               q = 4 (number of queries)
+5 3             game[] size n = 5, leap = 3 (first query)
+0 0 0 0 0       game = [0, 0, 0, 0, 0]
+6 5             game[] size n = 6, leap = 5 (second query)
+0 0 0 1 1 1     . . .
+6 3
+0 0 1 1 1 0
+3 1
+0 1 0
+
+output
+
+YES
+YES
+NO
+NO
+
+
+---
+
